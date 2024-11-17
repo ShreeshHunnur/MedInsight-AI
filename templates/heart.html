@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction Form</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh; /* Use min-height instead of fixed height */
+          margin: 0;
+          background-color: #f0f8ff;
+          padding: 20px; /* Add some padding to avoid content touching edges */
+        }
+        .form-container {
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          max-width: 500px;
+          width: 100%;
+          overflow-y: auto; /* Allow scrolling if the content is too tall */
+        }
+        h2 {
+          text-align: center;
+          color: #333;
+        }
+        .form-group {
+          margin-bottom: 15px;
+        }
+        .form-group label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .form-group select {
+          background-color: #fff;
+          cursor: pointer;
+        }
+        .submit-btn {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          background-color: #4CAF50;
+          color: #ffffff;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+          background-color: #45a049;
+        }
+      </style>
+    </head>
+    <body>
+
+    <div class="form-container">
+        <h2>Heart Disease Prediction Form</h2>
+        <form id="predictionForm">
+            <!-- Your form fields remain the same -->
+            <div class="form-group">
+                <label for="age">What is your age?</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <!-- Sex -->
+            <div class="form-group">
+                <label for="sex">What is your sex?</label>
+                <select id="sex" name="sex" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <!-- Chest Pain Type -->
+            <div class="form-group">
+                <label for="chest_pain">What type of chest pain do you experience?</label>
+                <select id="chest_pain" name="chest_pain" required>
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-anginal Pain</option>
+                    <option value="4">Asymptomatic</option>
+                </select>
+            </div>
+
+            <!-- Blood Pressure -->
+            <div class="form-group">
+                <label for="bp">What is your resting blood pressure (in mm Hg)?</label>
+                <input type="number" id="bp" name="bp" required>
+            </div>
+
+            <!-- Cholesterol -->
+            <div class="form-group">
+                <label for="cholesterol">What is your serum cholesterol level (in mg/dL)?</label>
+                <input type="number" id="cholesterol" name="cholesterol" required>
+            </div>
+
+            <!-- Fasting Blood Sugar -->
+            <div class="form-group">
+                <label for="fbs">Is your fasting blood sugar over 120 mg/dL?</label>
+                <select id="fbs" name="fbs" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <!-- EKG Results -->
+            <div class="form-group">
+                <label for="ekg">What were the results of your EKG test?</label>
+                <select id="ekg" name="ekg" required>
+                    <option value="0">Normal</option>
+                    <option value="1">ST-T Wave Abnormality</option>
+                    <option value="2">Probable Left Ventricular Hypertrophy</option>
+                </select>
+            </div>
+
+            <!-- Max Heart Rate -->
+            <div class="form-group">
+                <label for="max_hr">What is your maximum heart rate achieved during exercise?</label>
+                <input type="number" id="max_hr" name="max_hr" required>
+            </div>
+
+            <!-- Exercise Angina -->
+            <div class="form-group">
+                <label for="exercise_angina">Do you experience angina during exercise?</label>
+                <select id="exercise_angina" name="exercise_angina" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <!-- ST Depression -->
+            <div class="form-group">
+                <label for="st_depression">What is your ST depression value?</label>
+                <input type="text" id="st_depression" name="st_depression" required>
+            </div>
+
+            <!-- Slope of ST -->
+            <div class="form-group">
+                <label for="slope_of_st">What is the slope of the peak exercise ST segment?</label>
+                <select id="slope_of_st" name="slope_of_st" required>
+                    <option value="1">Upsloping</option>
+                    <option value="2">Flat</option>
+                    <option value="3">Downsloping</option>
+                </select>
+            </div>
+
+            <!-- Number of Vessels Fluro -->
+            <div class="form-group">
+                <label for="num_vessels">How many major vessels (0-3) were colored by fluoroscopy?</label>
+                <input type="number" id="num_vessels" name="num_vessels" required>
+            </div>
+
+            <!-- Thallium -->
+            <div class="form-group">
+                <label for="thallium">What is your thallium stress test result?</label>
+                <select id="thallium" name="thallium" required>
+                    <option value="3">Normal</option>
+                    <option value="6">Fixed Defect</option>
+                    <option value="7">Reversible Defect</option>
+                </select>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit for Prediction</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this); // Get the form data
+
+            // Send the data to the backend using Fetch API
+            fetch('/predict_heart', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Display the prediction result in an alert box
+                    if (data.result) {
+                        alert(data.result);
+                    } else {
+                        alert(data.error);
+                    }
+                })
+                .catch(error => {
+                    alert('Error: ' + error.message);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

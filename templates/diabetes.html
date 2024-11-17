@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            overflow-y: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group select {
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Diabetes Prediction Form</h2>
+    <form id="predictionForm">
+        <!-- Form fields for each question -->
+
+        <div class="form-group">
+            <label for="high_bp">Do you have high blood pressure?</label>
+            <select id="high_bp" name="high_bp" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="high_chol">Do you have high cholesterol?</label>
+            <select id="high_chol" name="high_chol" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="chol_check">Have you had a cholesterol check in the past 5 years?</label>
+            <select id="chol_check" name="chol_check" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bmi">What is your Body Mass Index (BMI)?</label>
+            <input type="number" id="bmi" name="bmi" required>
+        </div>
+
+        <div class="form-group">
+            <label for="smoker">Have you smoked at least 100 cigarettes in your lifetime?</label>
+            <select id="smoker" name="smoker" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="stroke">Have you ever had a stroke?</label>
+            <select id="stroke" name="stroke" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="heart_disease">Have you had coronary heart disease or a heart attack?</label>
+            <select id="heart_disease" name="heart_disease" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="phys_activity">Do you engage in physical activities or exercises?</label>
+            <select id="phys_activity" name="phys_activity" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fruits">Do you consume fruit at least once per day?</label>
+            <select id="fruits" name="fruits" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="veggies">Do you consume vegetables at least once per day?</label>
+            <select id="veggies" name="veggies" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="hvy_alcohol">Do you consume heavy amounts of alcohol?</label>
+            <select id="hvy_alcohol" name="hvy_alcohol" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="any_healthcare">Do you have any health care coverage?</label>
+            <select id="any_healthcare" name="any_healthcare" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="no_docbc_cost">Was there a time in the past 12 months when you needed to see a doctor but could not because of the cost?</label>
+            <select id="no_docbc_cost" name="no_docbc_cost" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="gen_health">In general, how would you rate your health?</label>
+            <select id="gen_health" name="gen_health" required>
+                <option value="1">Excellent</option>
+                <option value="2">Very Good</option>
+                <option value="3">Good</option>
+                <option value="4">Fair</option>
+                <option value="5">Poor</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ment_health">In the past 30 days, how many days was your mental health not good?</label>
+            <input type="number" id="ment_health" name="ment_health" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phys_health">In the past 30 days, how many days was your physical health not good?</label>
+            <input type="number" id="phys_health" name="phys_health" required>
+        </div>
+
+        <div class="form-group">
+            <label for="diff_walk">Do you have serious difficulty walking or climbing stairs?</label>
+            <select id="diff_walk" name="diff_walk" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="sex">What is your sex?</label>
+            <select id="sex" name="sex" required>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">What is your age group?</label>
+            <select id="age" name="age" required>
+                <option value="1">18-24</option>
+                <option value="2">25-29</option>
+                <option value="3">30-34</option>
+                <option value="4">35-39</option>
+                <option value="5">40-44</option>
+                <option value="6">45-49</option>
+                <option value="7">50-54</option>
+                <option value="8">55-59</option>
+                <option value="9">60-64</option>
+                <option value="10">65-69</option>
+                <option value="11">70-74</option>
+                <option value="12">75-79</option>
+                <option value="13">80 or older</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit for Prediction</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('/predict_sugar', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.result || data.error);
+        })
+        .catch(error => {
+            alert('Error: ' + error.message);
+        });
+    });
+</script>
+
+</body>
+</html>
